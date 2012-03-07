@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Annual Archive
-Plugin URI: http://www.twinpictures.de/anual-archive-widget
-Description: Like the default Archive Widget, but grouped by year.
-Version: 1.1
+Plugin URI: http://plugins.twinpictures.de/plugins/annual-archive-widget/
+Description: Display daily, weekly, monthly or annual archives with a sidebar widget or shortcode.
+Version: 1.1.1
 Author: Twinpictures
-Author URI: http://www.twinpictures.de
+Author URI: http://www.twinpictures.de/
 License: GPL2
 */
 
-/*  Copyright 2011 Twinpictures (www.twinpictures.de)
+/*  Copyright 2012 Twinpictures (www.twinpictures.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
