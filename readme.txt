@@ -1,17 +1,17 @@
 === Annual Archive ===
 
 Contributors: twinpictures, baden03
-Donate link: http://plugins.twinpictures.de/plugins/annual-archive-widget/
+Donate link: http://plugins.twinpictures.de/plugins/annual-archive/
 Tags: archive, archives, yearly, monthly, anual, annual, annually, archive by month, archive by year, yearly archive, twinpictures, plugin-oven, pluginoven
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.1.1
+Stable tag: 1.2
 
 Display daily, weekly, monthly or annual archives with a sidebar widget or shortcode.
 
 == Description ==
 
-Annual Archive widget extends default WordPress Archive widget to allow daily, weekly, monthly, yearly, postbypost and alpha archives to be displayed.  Archives can be displyed in the sidebar using a widget, and even in a post or page by using a shortcode. A <a href='http://plugins.twinpictures.de/plugins/annual-archive-widget/documentation/'>complete listing of shortcode options and attribute demos</a> are available, as well as <a href='http://wordpress.org/tags/anual-archive'>free community</a> and <a href='http://plugins.twinpictures.de/plugins/annual-archive-widget/support/'>premium support</a>. The Annual Archive widget - A better archive widget.  Yup, that's pretty much it.
+Annual Archive widget extends default WordPress Archive widget to allow daily, weekly, monthly, yearly, postbypost and alpha archives to be displayed.  Archives can be displyed in the sidebar using a widget, and even in a post or page by using a shortcode. A <a href='http://plugins.twinpictures.de/plugins/annual-archive/documentation/'>complete listing of shortcode options and attribute demos</a> are available, as well as <a href='http://wordpress.org/tags/anual-archive'>free community</a> and <a href='http://plugins.twinpictures.de/plugins/annual-archive/support/'>premium support</a>. The Annual Archive widget - A better archive widget.  Yup, that's pretty much it.  Oh, one more thing: The plugin can be translated into any language using our community translation tool: http://translate.twinpictures.de/projects/anual-archive  Ok, that's it.
 
 == Installation ==
 
@@ -24,10 +24,13 @@ Annual Archive widget extends default WordPress Archive widget to allow daily, w
 == Frequently Asked Questions ==
 
 = What are the shortcode options? =
-A <a href='http://plugins.twinpictures.de/plugins/annual-archive-widget/documentation/'>complete list of shortcode options</a> has been provided.
+A <a href='http://plugins.twinpictures.de/plugins/annual-archive/documentation/'>complete list of shortcode options</a> has been provided.
 
 = Where might one leave feedback, bug-reports and request features? =
 The <a href='http://wordpress.org/tags/anual-archive'>Annual Archive Forum</a> at WordPress.org is one popular choice.
+
+= How can I translate this plugin in to my mother tongue? =
+By using our open community translation tool: http://translate.twinpictures.de/projects/anual-archive
 
 = I am a Social Netwookiee, do you have a Facebook page? =
 Yes, yes... <a href='http://www.facebook.com/twinpictures'>Twinpictures is on Facebook</a>.
@@ -47,6 +50,10 @@ Scares the crap out of the seeing-eye-dogs.
 
 == Changelog ==
 
+= 1.2 =
+* Added translation files
+* Added EN and DE translations
+
 = 1.1.1 =
 * Updated Screenshots
 * Moved plugin to it's new home on the Plugin Oven
@@ -58,6 +65,9 @@ Scares the crap out of the seeing-eye-dogs.
 * The plugin came to be.
 
 == Upgrade Notice ==
+
+= 1.2 =
+The plugin can now be translated into any language
 
 = 1.1.1 =
 Small Updates, improved documentation, same wicked support.
