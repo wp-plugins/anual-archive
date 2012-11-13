@@ -1,0 +1,80 @@
+# Translation of Anual Archive in French (France)
+# This file is distributed under the same license as the Anual Archive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2012-10-07 15:09+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Poedit 1.5.3\n"
+"Project-Id-Version: Anual Archive\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Baden Coleman <baden@twinpictures.de>\n"
+"Language-Team: Twinpictures/Entodoays <entodoays@gmail.com>\n"
+"Language: French\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "http://plugins.twinpictures.de/plugins/annual-archive-widget/"
+msgstr "http://plugins.twinpictures.de/plugins/annual-archive-widget/"
+
+msgid ""
+"Display daily, weekly, monthly or annual archives with a sidebar widget or "
+"shortcode."
+msgstr ""
+"Afficher archives quotidiens, hebdomadaires, mensuel ou annuel avec un "
+"widget sidebar ou shortcode."
+
+msgid "Twinpictures"
+msgstr "Twinpictures"
+
+msgid "http://www.twinpictures.de/"
+msgstr "http://www.twinpictures.de/"
+
+#: archive_by_year.php:34
+msgid "Display weekly, monthly or yearly post archives."
+msgstr "Afficher les archives des articles hebdomadaires, mensuels ou annuels."
+
+#: archive_by_year.php:35 archive_by_year.php:45
+msgid "Annual Archive"
+msgstr "Archive annuel"
+
+#: archive_by_year.php:52 archive_by_year.php:143
+msgid "Select Year"
+msgstr "Choisissez l'année"
+
+#: archive_by_year.php:54 archive_by_year.php:145
+msgid "Select Month"
+msgstr "Choisissez le mois"
+
+#: archive_by_year.php:57 archive_by_year.php:148
+msgid "Select Week"
+msgstr "Choisissez la sémaine"
+
+#: archive_by_year.php:60 archive_by_year.php:151
+msgid "Select Day"
+msgstr "Choisissez le jour"
+
+#: archive_by_year.php:63 archive_by_year.php:154
+msgid "Select Post"
+msgstr "Choisissez l'article"
+
+#: archive_by_year.php:98
+msgid "Title:"
+msgstr "Titre :"
+
+#: archive_by_year.php:100
+msgid "Show post counts"
+msgstr "Afficher nombre d'articles"
+
+#: archive_by_year.php:102
+msgid "Display as a drop down"
+msgstr "Afficher sous forme de liste déroulante"
+
+#: archive_by_year.php:104
+msgid "Archive type:"
+msgstr "Type d'archive :"
+
+#: archive_by_year.php:124
+msgid "Limit results to:"
+msgstr "Limiter les résultats à :"
