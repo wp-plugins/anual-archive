@@ -58,6 +58,30 @@ msgstr ""
 msgid "Archive type:"
 msgstr ""
 
+#: archive_by_year.php:107
+msgid "Daily"
+msgstr ""
+
+#: archive_by_year.php:108
+msgid "Weekly"
+msgstr ""
+
+#: archive_by_year.php:109
+msgid "Monthly"
+msgstr ""
+
+#: archive_by_year.php:110
+msgid "Yearly"
+msgstr ""
+
+#: archive_by_year.php:111
+msgid "Post By Post"
+msgstr ""
+
+#: archive_by_year.php:112
+msgid "Alpha"
+msgstr ""
+
 #: archive_by_year.php:124
 msgid "Limit results to:"
 msgstr ""
