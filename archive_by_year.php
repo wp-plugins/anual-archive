@@ -137,7 +137,7 @@ class AnualArchives extends WP_Widget {
 			}
 			?>
 			</select></lable><br/>
-			<span class="description"><a href="http://codex.wordpress.org/Function_Reference/wp_get_archives#Parameters" target="_blank"><?php _e('Format details'); ?></a></span>
+			<span class="description"><a href="http://codex.wordpress.org/Function_Reference/wp_get_archives#Parameters" target="_blank"><?php _e('Format details', 'anarch'); ?></a></span>
 		</p>
 		<p><label for="<?php echo $this->get_field_id('before'); ?>"><?php _e('Text Before Link:', 'anarch'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('before'); ?>" name="<?php echo $this->get_field_name('before'); ?>" type="text" value="<?php echo $before; ?>" /></p>
 		<p><label for="<?php echo $this->get_field_id('after'); ?>"><?php _e('Text After Link:', 'anarch'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('after'); ?>" name="<?php echo $this->get_field_name('after'); ?>" type="text" value="<?php echo $after; ?>" /></p>
