@@ -5,13 +5,13 @@ Text Domain: anarch
 Domain Path: /languages
 Plugin URI: http://plugins.twinpictures.de/plugins/annual-archive-widget/
 Description: Display daily, weekly, monthly or annual archives with a sidebar widget or shortcode.
-Version: 1.3
+Version: 1.4
 Author: Twinpictures
 Author URI: http://www.twinpictures.de/
 License: GPL2
 */
 
-/*  Copyright 2012 Twinpictures (www.twinpictures.de)
+/*  Copyright 2014 Twinpictures (www.twinpictures.de)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -92,8 +92,8 @@ class AnualArchives extends WP_Widget {
 		$format = empty($instance['format']) ? 'html' : strip_tags($instance['format']);
 		$before = empty($instance['before']) ? '' : $instance['before'];
 		$after = empty($instance['after']) ? '' : $instance['after'];
-		$type = empty($instance['type']) ? ' ' : strip_tags($instance['type']); 
-		$limit = strip_tags($instance['limit']);
+		$type = empty($instance['type']) ? ' ' : strip_tags($instance['type']);
+		$limit = empty($instance['limit']) ? -1 : strip_tags($instance['limit']); 
 		?>
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'anarch'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 		<p><label><input class="checkbox" type="checkbox" <?php echo $count; ?> id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" />&nbsp;&nbsp;<?php _e('Show post counts', 'anarch'); ?></label></p>
@@ -153,7 +153,7 @@ add_action('widgets_init', create_function('', 'return register_widget("AnualArc
 function annual_archive($atts, $content=null) {
 	extract(shortcode_atts(array(
 		'type' => 'yearly',
-		'limit' => '',
+		'limit' => -1,
 		'format' => 'html', //html, option, link, custom
 		'before' => '',
 		'after' => '',
