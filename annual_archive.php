@@ -5,7 +5,7 @@ Text Domain: anarch
 Domain Path: /languages
 Plugin URI: http://plugins.twinpictures.de/plugins/annual-archive/
 Description: Display daily, weekly, monthly, yearly, postbypost and alpha archives with a sidebar widget or shortcode.
-Version: 1.4
+Version: 1.4.1
 Author: Twinpictures
 Author URI: http://www.twinpictures.de/
 License: GPL2
@@ -24,7 +24,7 @@ class WP_Plugin_Annual_Archive {
 	 * @var string
 	 */
 	var $plugin_name = 'Annual Archive';
-	var $version = '1.4';
+	var $version = '1.4.1';
 	var $domain = 'anarch';
 
 	/**
@@ -111,27 +111,34 @@ class WP_Plugin_Annual_Archive {
 			'after' => '',
 			'showcount' => '0',
 			'tag' => 'ul',
+			'order' => 'DESC',
+			'select_text' => '',
 		), $atts));
 		
 		if ($format == 'option') {
-			$dtitle = __('Select Year', 'anarch');
-			if ($type == 'monthly'){
-				$dtitle = __('Select Month', 'anarch');
+			if( !empty($select_text) ){
+				$dtitle = $select_text;
 			}
-			else if($type == 'weekly'){
-				$dtitle = __('Select Week', 'anarch');
-			}
-			else if($type == 'daily'){
-				$dtitle = __('Select Day', 'anarch');
-			}
-			else if($type == 'postbypost' || $type == 'alpha'){
-				$dtitle = __('Select Post', 'anarch');
+			else{
+				$dtitle = __('Select Year', 'anarch');
+				if ($type == 'monthly'){
+					$dtitle = __('Select Month', 'anarch');
+				}
+				else if($type == 'weekly'){
+					$dtitle = __('Select Week', 'anarch');
+				}
+				else if($type == 'daily'){
+					$dtitle = __('Select Day', 'anarch');
+				}
+				else if($type == 'postbypost' || $type == 'alpha'){
+					$dtitle = __('Select Post', 'anarch');
+				}
 			}
 			$arc = '<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;"> <option value="">'.esc_attr($dtitle).'</option>';
 			$arc .= wp_get_archives(array('type' => $type, 'limit' => $limit, 'format' => 'option', 'show_post_count' => $showcount, 'echo' => 0)).'</select>';
 		} else {
 			$arc = '<'.$tag.'>';
-			$arc .= wp_get_archives(array('type' => $type, 'limit' => $limit, 'format' => $format, 'before' => $before, 'after' => $after, 'show_post_count' => $showcount, 'echo' => 0));
+			$arc .= wp_get_archives(array('type' => $type, 'limit' => $limit, 'format' => $format, 'before' => $before, 'after' => $after, 'show_post_count' => $showcount, 'order' => $order, 'echo' => 0));
 			$arc .= '</'.$tag.'>';
 		}
 		return $arc;
@@ -277,39 +284,46 @@ class Annual_Archive_Widget extends WP_Widget {
 	//$options = get_option('WP_AnnualArchive_options');
 	extract( $args );
 	
-	$format = empty($instance['format']) ? 'html' : apply_filters('widget_type', $instance['format']);
+	$format = empty($instance['format']) ? 'html' : apply_filters('widget_format', $instance['format']);
 	$type = empty($instance['type']) ? 'yearly' : apply_filters('widget_type', $instance['type']);
-	$before = empty($instance['before']) ? '' : apply_filters('widget_type', $instance['before']);
-	$after = empty($instance['after']) ? '' : apply_filters('widget_type', $instance['after']);
+	$before = empty($instance['before']) ? '' : apply_filters('widget_before', $instance['before']);
+	$after = empty($instance['after']) ? '' : apply_filters('widget_after', $instance['after']);
 	$limit = apply_filters('widget_limit', $instance['limit']);
 	$title = apply_filters('widget_title', empty($instance['title']) ? __('Annual Archive', 'anarch') : $instance['title'], $instance, $this->id_base);
 	$count = empty($instance['count']) ? 0 : $instance['count'];
+	$order = empty($instance['order']) ? 'DESC' : apply_filters('widget_order', $instance['order']);
+	$select_text = empty($instance['select_text']) ? '' : apply_filters('widget_slelect_text', $instance['select_text']);
 	
 	echo $before_widget;
 	if ( $title )
 		echo $before_title . $title . $after_title;
 
 	if ($format == 'option') {
-		$dtitle = __('Select Year', 'anarch');
-		if ($type == 'monthly'){
-			$dtitle = __('Select Month', 'anarch');
+		if($select_text){
+			$dtitle = $select_text;	
 		}
-		else if($type == 'weekly'){
-			$dtitle = __('Select Week', 'anarch');
-		}
-		else if($type == 'daily'){
-			$dtitle = __('Select Day', 'anarch');
-		}
-		else if($type == 'postbypost' || $type == 'alpha'){
-			$dtitle = __('Select Post', 'anarch');
+		else{
+			$dtitle = __('Select Year', 'anarch');
+			if ($type == 'monthly'){
+				$dtitle = __('Select Month', 'anarch');
+			}
+			else if($type == 'weekly'){
+				$dtitle = __('Select Week', 'anarch');
+			}
+			else if($type == 'daily'){
+				$dtitle = __('Select Day', 'anarch');
+			}
+			else if($type == 'postbypost' || $type == 'alpha'){
+				$dtitle = __('Select Post', 'anarch');
+			}
 		}
 	?>
-	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo esc_attr(__($dtitle, 'anarch')); ?></option> <?php wp_get_archives(apply_filters('widget_archive_dropdown_args', array('type' => $type, 'format' => 'option', 'show_post_count' => $count, 'limit' => $limit))); ?> </select>
+	<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo esc_attr(__($dtitle, 'anarch')); ?></option> <?php wp_get_archives(apply_filters('widget_archive_dropdown_args', array('type' => $type, 'format' => 'option', 'show_post_count' => $count, 'limit' => $limit, 'order' => $order))); ?> </select>
 	<?php
 	} else {
 	?>
 	<ul>
-	<?php wp_get_archives(apply_filters('widget_archive_args', array('type' => $type, 'limit' => $limit, 'format' => $format, 'before' => $before, 'after' => $after, 'show_post_count' => $count))); ?>
+	<?php wp_get_archives(apply_filters('widget_archive_args', array('type' => $type, 'limit' => $limit, 'format' => $format, 'before' => $before, 'after' => $after, 'show_post_count' => $count, 'order' => $order))); ?>
 	</ul>
 	<?php
 	}
@@ -333,6 +347,8 @@ class Annual_Archive_Widget extends WP_Widget {
 		$after = empty($instance['after']) ? '' : stripslashes($instance['after']);
 		$type = empty($instance['type']) ? '' : strip_tags($instance['type']);
 		$limit = empty($instance['limit']) ? '' : stripslashes($instance['limit']);
+		$order = empty($instance['order']) ? 'DESC' : stripslashes($instance['order']);
+		$select_text = empty($instance['select_text']) ? '' : stripslashes($instance['select_text']);
         ?>
 
         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','anarch'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
@@ -379,7 +395,9 @@ class Annual_Archive_Widget extends WP_Widget {
 	</p>
 	<p><label for="<?php echo $this->get_field_id('before'); ?>"><?php _e('Text Before Link:', 'anarch'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('before'); ?>" name="<?php echo $this->get_field_name('before'); ?>" type="text" value="<?php echo $before; ?>" /></p>
 	<p><label for="<?php echo $this->get_field_id('after'); ?>"><?php _e('Text After Link:', 'anarch'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('after'); ?>" name="<?php echo $this->get_field_name('after'); ?>" type="text" value="<?php echo $after; ?>" /></p>
+	<p><label for="<?php echo $this->get_field_id('select_text'); ?>"><?php _e('Select Text:', 'anarch'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('select_text'); ?>" name="<?php echo $this->get_field_name('select_text'); ?>" type="text" value="<?php echo $select_text; ?>" /></p>
 	<p><label for="<?php echo $this->get_field_id('limit'); ?>"><?php _e('Number of archives to display:', 'anarch'); ?></label> <input class="widefat" style="width: 50px;" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('limit'); ?>" type="text" value="<?php echo esc_attr($limit); ?>" /></p>				
+	<p><label for="<?php echo $this->get_field_id('order'); ?>"><?php _e('Sort order:', 'anarch'); ?></label> <input name="<?php echo $this->get_field_name('order'); ?>" type="radio" value="DESC" <?php checked( $order, 'DESC' ); ?> /> DESC <input name="<?php echo $this->get_field_name('order'); ?>" type="radio" value="ASC" <?php checked( $order, 'ASC' ); ?>  />  ASC</p>
 	<?php
     }
 } // class Annual_Archive_Widget
