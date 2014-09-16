@@ -5,7 +5,7 @@ Text Domain: anarch
 Domain Path: /languages
 Plugin URI: http://plugins.twinpictures.de/plugins/annual-archive/
 Description: Display daily, weekly, monthly, yearly, postbypost and alpha archives with a sidebar widget or shortcode.
-Version: 1.4.1
+Version: 1.4.2
 Author: Twinpictures
 Author URI: http://www.twinpictures.de/
 License: GPL2
@@ -24,7 +24,7 @@ class WP_Plugin_Annual_Archive {
 	 * @var string
 	 */
 	var $plugin_name = 'Annual Archive';
-	var $version = '1.4.1';
+	var $version = '1.4.2';
 	var $domain = 'anarch';
 
 	/**
