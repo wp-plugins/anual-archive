@@ -5,7 +5,7 @@ Text Domain: anarch
 Domain Path: /languages
 Plugin URI: http://plugins.twinpictures.de/plugins/annual-archive/
 Description: Display daily, weekly, monthly, yearly, postbypost and alpha archives with a sidebar widget or shortcode.
-Version: 1.4.2
+Version: 1.4.3
 Author: Twinpictures
 Author URI: http://www.twinpictures.de/
 License: GPL2
@@ -24,7 +24,7 @@ class WP_Plugin_Annual_Archive {
 	 * @var string
 	 */
 	var $plugin_name = 'Annual Archive';
-	var $version = '1.4.2';
+	var $version = '1.4.3';
 	var $domain = 'anarch';
 
 	/**
@@ -195,25 +195,20 @@ class WP_Plugin_Annual_Archive {
 							
 							<fieldset class="options">
 								<table class="form-table">
-								<tr>
-									<th><?php _e( 'Custom Style', $this->domain ) ?>:</th>
-									<td><label><textarea id="<?php echo $this->options_name ?>[custom_css]" name="<?php echo $this->options_name ?>[custom_css]" style="width: 100%; height: 150px;"><?php echo $options['custom_css']; ?></textarea>
-										<br /><span class="description"><?php _e( 'Custom CSS style for <em>ultimate flexibility</em>', $this->domain ) ?></span></label>
-									</td>
-								</tr>
-								
-								<tr>
-									<th><strong><?php _e( 'Level Up!', $this->domain ) ?></strong></th>
-									<td><?php printf(__( '%sArchive-Pro-Matic%s is our advanced plugin that adds the ability to display archives by <strong>post type</strong> or <strong>category</strong>.', $this->domain ), '<a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/">', '</a>'); ?>
-									</td>
-								</tr>
-								
+									<tr>
+										<th><?php _e( 'Custom Style', $this->domain ) ?>:</th>
+										<td><label><textarea id="<?php echo $this->options_name ?>[custom_css]" name="<?php echo $this->options_name ?>[custom_css]" style="width: 100%; height: 150px;"><?php echo $options['custom_css']; ?></textarea>
+											<br /><span class="description"><?php _e( 'Custom CSS style for <em>ultimate flexibility</em>', $this->domain ) ?></span></label>
+										</td>
+									</tr>
 								</table>
 							</fieldset>
 							
 							<p class="submit" style="margin-bottom: 20px;">
 								<input class="button-primary" type="submit" value="<?php _e( 'Save Changes', $this->domain ) ?>" style="float: right;" />
 							</p>
+							
+							<p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
 					</div>
 				</div>
 			</div>
@@ -234,6 +229,25 @@ class WP_Plugin_Annual_Archive {
 							<li><?php printf( __('If this plugin %s, please consider %ssharing your story%s with others.', $this->domain), $like_it, '<a href="http://www.facebook.com/twinpictures" target="_blank">', '</a>' ) ?></li>
 							<li><?php printf( __('Your %sreviews%s, %sbug-reports, feedback%s and %scocktail recipes%s are always welcomed.', $this->domain), '<a href="http://wordpress.org/support/view/plugin-reviews/anual-archive">', '</a>', '<a href="http://wordpress.org/support/plugin/anual-archive">', '</a>', '<a href="http://www.facebook.com/twinpictures">', '</a>'); ?></li>
 						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="postbox-container side metabox-holder meta-box-sortables" style="width:29%;">
+			<div style="margin:0 5px;">
+				<div class="postbox">
+					<div class="handlediv" title="<?php _e( 'Click to toggle' ) ?>"><br/></div>
+					<h3 class="handle"><?php _e( 'Level Up!' ) ?></h3>
+					<div class="inside">
+						<p><?php printf(__( '%sArchive-Pro-Matic%s is our premium plugin that adds the ability to display archives by <strong>post type</strong> or <strong>category</strong>', $this->domain ), '<a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/">', '</a>'); ?></p>		
+						<p style="padding: 5px; border: 1px dashed #cccc66; background: #EEE;"><strong>Limited Offer:</strong> <a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/">Update to Archive-Pro-Matic</a> before January 1, 2015 to receive a lifetime unlimited licence. As of 2015 all Plugin Oven pro plugins will come with a more restrictive licensing system.</p>
+						<h4><?php _e('Reasons To Go Pro', $this->domain); ?></h4>
+						<ol>
+							<li><?php _e('I am an advanced user and want/need advanced features', $this->domain); ?></li>
+							<li><?php _e('Annual Archive was just what I needed. Here, have some money.', $this->domain); ?></li>
+						</ol>
 					</div>
 				</div>
 			</div>
