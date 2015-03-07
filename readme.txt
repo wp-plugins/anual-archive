@@ -11,7 +11,7 @@ Display daily, weekly, monthly or annual archives with a sidebar widget or short
 
 == Description ==
 
-Annual Archive widget extends default WordPress Archive widget to allow daily, weekly, monthly, yearly, postbypost and alpha archives to be displayed.  Archives can be displyed in the sidebar using a widget, and even in a post or page by using a shortcode. A <a href='http://plugins.twinpictures.de/plugins/annual-archive/documentation/'>complete listing of shortcode options and attribute demos</a> are available, as well as <a href='http://wordpress.org/tags/anual-archive'>free community support</a>. The Annual Archive widget - A better archive widget. The plugin can be translated into any language using our <a href=‘http://translate.twinpictures.de/projects/anual-archive/'>community translation tool</a>.
+Annual Archive widget extends default WordPress Archive widget to allow daily, weekly, monthly, yearly, postbypost and alpha archives to be displayed.  Archives can be displyed in the sidebar using a widget, and even in a post or page by using a shortcode. A <a href='http://plugins.twinpictures.de/plugins/annual-archive/documentation/'>complete listing of shortcode options and attribute demos</a> are available, as well as <a href='http://wordpress.org/tags/anual-archive'>free community support</a>. The Annual Archive widget - A better archive widget. The plugin can be translated into any language using our community translation tool at: http://translate.twinpictures.de/projects/anual-archive/
 
 == Installation ==
 
