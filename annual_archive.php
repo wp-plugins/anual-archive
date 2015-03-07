@@ -5,7 +5,7 @@ Text Domain: anarch
 Domain Path: /languages
 Plugin URI: http://plugins.twinpictures.de/plugins/annual-archive/
 Description: Display daily, weekly, monthly, yearly, postbypost and alpha archives with a sidebar widget or shortcode.
-Version: 1.4.3
+Version: 1.4.4
 Author: Twinpictures
 Author URI: http://www.twinpictures.de/
 License: GPL2
@@ -24,7 +24,7 @@ class WP_Plugin_Annual_Archive {
 	 * @var string
 	 */
 	var $plugin_name = 'Annual Archive';
-	var $version = '1.4.3';
+	var $version = '1.4.4';
 	var $domain = 'anarch';
 
 	/**
@@ -135,7 +135,7 @@ class WP_Plugin_Annual_Archive {
 				}
 			}
 			$arc = '<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;"> <option value="">'.esc_attr($dtitle).'</option>';
-			$arc .= wp_get_archives(array('type' => $type, 'limit' => $limit, 'format' => 'option', 'show_post_count' => $showcount, 'echo' => 0)).'</select>';
+			$arc .= wp_get_archives(array('type' => $type, 'limit' => $limit, 'format' => 'option', 'show_post_count' => $showcount, 'order' => $order, 'echo' => 0)).'</select>';
 		} else {
 			$arc = '<'.$tag.'>';
 			$arc .= wp_get_archives(array('type' => $type, 'limit' => $limit, 'format' => $format, 'before' => $before, 'after' => $after, 'show_post_count' => $showcount, 'order' => $order, 'echo' => 0));
@@ -241,12 +241,13 @@ class WP_Plugin_Annual_Archive {
 					<div class="handlediv" title="<?php _e( 'Click to toggle' ) ?>"><br/></div>
 					<h3 class="handle"><?php _e( 'Level Up!' ) ?></h3>
 					<div class="inside">
-						<p><?php printf(__( '%sArchive-Pro-Matic%s is our premium plugin that adds the ability to display archives by <strong>post type</strong> or <strong>category</strong>', $this->domain ), '<a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/">', '</a>'); ?></p>		
-						<p style="padding: 5px; border: 1px dashed #cccc66; background: #EEE;"><strong>Limited Offer:</strong> <a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/">Update to Archive-Pro-Matic</a> before January 1, 2015 to receive a lifetime unlimited licence. As of 2015 all Plugin Oven pro plugins will come with a more restrictive licensing system.</p>
+						<p><?php printf(__( '%sArchive-Pro-Matic%s is our premium plugin that adds the ability to display archives by <strong>post type</strong> or <strong>category</strong>', $this->domain ), '<a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/?utm_source=annual-archive&utm_medium=plugin-settings-page&utm_content=archive-pro-matic&utm_campaign=archive-pro-level-up">', '</a>'); ?></p>		
+						<p style="padding: 5px; border: 1px dashed #cccc66; background: #EEE;"><strong>Special Offer:</strong> <a href="http://plugins.twinpictures.de/premium-plugins/archive-pro-matic/?utm_source=annual-archive&utm_medium=plugin-settings-page&utm_content=archive-pro-matic&utm_campaign=archive-pro-may-the-forth">Update to Archive-Pro-Matic</a> with discount code: <strong>MAYTHEFORTH</strong> on or before May 4th, 2015 and get a 15% discount. Why? Because Star Wars, that's why.</p>
 						<h4><?php _e('Reasons To Go Pro', $this->domain); ?></h4>
 						<ol>
 							<li><?php _e('I am an advanced user and want/need advanced features', $this->domain); ?></li>
 							<li><?php _e('Annual Archive was just what I needed. Here, have some money.', $this->domain); ?></li>
+							<li>Special Offer: May the forth be with you.</li>
 						</ol>
 					</div>
 				</div>

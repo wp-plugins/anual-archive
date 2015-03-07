@@ -4,8 +4,8 @@ Contributors: twinpictures, baden03
 Donate link: http://plugins.twinpictures.de/plugins/annual-archive/
 Tags: archive, archives, yearly, monthly, anual, annual, annually, archive by month, archive by year, yearly archive, twinpictures, plugin-oven, pluginoven
 Requires at least: 3.9
-Tested up to: 4.1
-Stable tag: 1.4.3
+Tested up to: 4.2
+Stable tag: 1.4.4
 
 Display daily, weekly, monthly or annual archives with a sidebar widget or shortcode.
 
@@ -57,6 +57,9 @@ Scares the crap out of the seeing-eye-dogs.
 == Changelog ==
 
 = 1.4.3 =
+* fixed order attribute when using the dropdown select element
+
+= 1.4.3 =
 * updated for WordPress 4.1
 
 = 1.4.2 =
@@ -92,6 +95,9 @@ Scares the crap out of the seeing-eye-dogs.
 * The plugin came to be.
 
 == Upgrade Notice ==
+
+= 1.4.4 =
+* order attribute now works when using option format
 
 = 1.4.3 =
 * updated for WordPress 4.1
